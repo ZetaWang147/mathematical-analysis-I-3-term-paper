@@ -1,0 +1,66 @@
+\documentclass{article}
+\usepackage{fontspec}  % 字体选择
+\usepackage{xeCJK}     % 中文支持
+\usepackage{hyperref}  % 超链接支持
+\usepackage{cite}      % 参考文献=
+
+\usepackage{amsthm}%提供proof环境
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{siunitx}
+
+\title{度量空间}
+\author{ZetaWang}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+本文旨在通过介绍度量空间及其拓扑性质，为将来拓扑学的学习进行铺垫。
+\end{abstract}
+
+\tableofcontents % 生成目录
+
+\section{度量空间的介绍}
+给定一个集合 $X$,把他的元素称为点(point),如果存在一个映射 $d:X\times X\rightarrow \mathbb{R}$，对任意 $x,y,z\in X$，满足：
+\begin{enumerate}
+    \item $d(x,y)\geq 0$，且 $d(x,y) = 0$ 当且仅当 $x=y$;
+    \item $d(x,y) = d(y,x)$;
+    \item $d(x,y) + d(y,z) \geq d(x,z)$。
+\end{enumerate}
+则称 $X$ 为度量空间(metric space),$d$ 为距离(distance) .\setlength{\parskip}{1em} % 在段落之间增加额外的垂直间距
+
+以下为一些度量空间的例子：\setlength{\parskip}{1em} % 在段落之间增加额外的垂直间距
+
+\textbf{例1}验证欧氏空间及其度量构成一个度量空间。(即 $d(x,y) = (\sum_{k=1}^{n}( x_k-y_k)^2)^{\frac{1}{2}}$)
+\begin{proof}
+    \begin{enumerate}
+        \item $d(x,y) = (\sum_{k=1}^{n}( x_k-y_k)^2)^{\frac{1}{2}} \geq 0$，且 $d(x,y) = 0$ 当且仅当 $x=y$;
+        \item $d(x,y) = d(y,x) $;
+        \item 由 Minkowski 不等式，
+        \begin{align*}
+            % d(x,y) + d(y,z)
+            & = (\sum_{k=1}^{n}( x_k-y_k)^2)^\frac{1}{2} + (\sum_{k=1}^{n}( y_k-z_k)^2)^{\frac{1}{2}} \\
+            & \geq (\sum_{k=1}^{n}( x_k-z_k)^2)^{\frac{1}{2}} \\
+            & = d(x,z)
+        \end{align*}
+    \end{enumerate}
+    因此，欧氏空间及其度量构成一个度量空间。
+\end{proof}
+
+\textbf{例2}设 $E$ 是一个非空集合，对任意的 $x,y\in E$，定义
+$$d(x,y) = \begin{cases} 0 & x=y \\ 1 & x\neq y \end{cases}$$
+证明 $d$ 是 $E$ 上的度量。拥有这种度量的集合 $E$ 称为离散度量空间(discrete metric space).
+
+\section{度量空间的拓扑结构}
+
+
+\section*{参考文献} % 无编号的参考文献部分
+\bibliographystyle{plain} % 参考文献样式
+\bibliography{references}  % 指向参考文献文件(references.bib)
+
+\end{document}
