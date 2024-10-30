@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.18)  30 OCT 2024 16:21
+This is XeTeX, Version 3.141592653-2.6-0.999995 (TeX Live 2023) (preloaded format=xelatex 2023.10.18)  30 OCT 2024 18:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -385,7 +385,15 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \extratabsurround=\skip65
 \backup@length=\skip66
 \ar@cellbox=\box66
-))
+)) (d:/texlive/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip67
+\enit@outerparindent=\dimen194
+\enit@toks=\toks30
+\enit@inbox=\box67
+\enit@count@id=\count323
+\enitdp@description=\count324
+)
 
 Package xeCJK Warning: Fandol is being set as the default font for CJK text.
 (xeCJK)                Please make sure it has been properly installed.
@@ -524,7 +532,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  [1
 
-] (./paper.bbl) [2] (./paper.aux)
+] [2] (./paper.bbl) [3] (./paper.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -533,12 +541,12 @@ Package rerunfilecheck Info: File `paper.out' has not changed.
 (rerunfilecheck)             Checksum: 2298609E1CDE97CAEB65B85D8CB5B22D;214.
  ) 
 Here is how much of TeX's memory you used:
- 17562 strings out of 475161
- 408349 string characters out of 5766725
+ 17938 strings out of 475161
+ 417359 string characters out of 5766725
  1929674 words of memory out of 5000000
- 39122 multiletter control sequences out of 15000+600000
+ 39494 multiletter control sequences out of 15000+600000
  565507 words of font info for 87 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 79i,9n,93p,609b,957s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,9n,93p,609b,1013s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on paper.xdv (2 pages, 12272 bytes).
+Output written on paper.xdv (3 pages, 20140 bytes).
