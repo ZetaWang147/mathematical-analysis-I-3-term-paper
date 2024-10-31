@@ -56,14 +56,44 @@
 \textbf{例1.3.}设 $E$ 是一个非空集合，对任意的 $x,y\in E$，定义
 $$d(x,y) = \begin{cases} 0 & x=y \\ 1 & x\neq y \end{cases}$$
 证明 $d$ 是 $E$ 上的度量。拥有这种度量的集合 $E$ 称为离散度量空间(discrete metric space).
+\begin{proof}
+    $ $
+    \begin{enumerate}[label={\textbullet}]
+        \item $d(x,y) \geq 0$，且 $d(x,y) = 0$ 当且仅当 $x=y$;
+        \item $d(x,y) = d(y,x)$;
+        \item $d(x,z)\leq d(x,y) + d(y,z)$ 在 $x=z$ 时显然成立；若 $x\neq z$，则 $x=y$ 和 $y=z$ 至少一个不成立，命题得证；
+    \end{enumerate}
+    因此，$d$ 是 $E$ 上的度量。
+\end{proof}
 
 \textbf{例1.4.}设 $E$ 是以 $d$ 为度量的度量空间，对任意 $x,y\in E$,定义
 $$d_1(x,y) = \frac{d(x,y)}{1+d(x,y)}$$
 证明 $d_1$ 也是 $E$ 上的一个度量。
+\begin{proof}
+    $ $
+前两个条件显然成立，来看第三个条件：
+\[\begin{aligned}
+    d_1(x,z)\leq d(x, y)+d(y,z) 
+& \Longleftrightarrow  \frac{d (x,z)}{1+d(x,z) }\leq \frac{d(x,y) }{1+d(x,y)}+\frac{d(y,z)}{1+d(y,z)} \\
+& \Longleftrightarrow   1+\frac{1}{1+d(x,z)}\geq \frac{1}{1+d(x,y)}+\frac{1}{1+d (y,z)} \\
+& \Longleftarrow 1+\frac{1}{1+d(x,z)}\geq \frac{2+d(x,y)+d (y,z) }{1+d(x, y)+d(y,z)}
+\end{aligned}\]
+最后的不等式显然成立。故 $d_1$ 是 $E$ 上的度量。
+\end{proof}
+由此可知，当已知度量空间上的一个度量时，可以构造新的度量。
 
 \textbf{例1.5.}设 $E$ 是定义在有界闭区间 $[a,b]$ 上的全体有界函数所成之集，对任意 $f,g\in E$,定义
-$$d(f,g) = \sup_{x\in [a,b]}|f(x)-g(x)|$$.
+$$d(f,g) = \sup_{x\in [a,b]}|f(x)-g(x)|$$
 证明 $d$ 是 $E$ 上的度量。
+\begin{proof}
+    前两个条件显然成立，来看第三个条件：由于
+    $$\vert f(x) - h(x)\vert \leq \vert f(x) - g(x)\vert + \vert g(x) - h(x)\vert$$
+    对任意 $x\in [a,b]$ 成立，对右边取上确界，得到
+    $$\vert f(x) - h(x)\vert \leq \sup_{x\in [a,b]}|f(x)-g(x)| + \sup_{x\in [a,b]}|g(x)-h(x)|$$
+    再对左边取上确界，得到
+    $$\sup_{x\in [a,b]}|f(x)-h(x)| \leq \sup_{x\in [a,b]}|f(x)-g(x)| + \sup_{x\in [a,b]}|g(x)-h(x)|$$
+    因此，$d$ 是 $E$ 上的度量。
+\end{proof}
 
 \textbf{例1.6.}设 $p$ 是一个素数，
 对任一非零整数 $a$,
@@ -85,11 +115,49 @@ $$d(x,z) \leq max\{d(x,y),d(y,z)\}$$
 称 $B(a,r) = \{x\in E: d(x,a)<r\}$ 为以 $a$ 为圆心，$r$ 为半径的圆。证明：圆内每个点均为该圆的圆心。
 
 \section{度量空间的拓扑结构}
-\textbf{定义2.1.}设 $X$ 为度量空间。
+\textbf{定义2.1.}设 $X$ 为度量空间。下面所提及的点或者集合都视为 $X$ 中的点或者 $X$ 的子集。
 \begin{enumerate}[label={\textbullet}]
     \item 对 $p\in X$,称 $N_r(p) = \{q\in X: d(p,q)\leq r\}$ 为 $p$ 的邻域（neighbourhood），$r$ 为半径（radius）;
-    \item 
+    \item 如果点 $p$ 的任意邻域都包含 $E$ 中的点 $q$，则称 $p$ 为 $E$ 的一个极限点（limit point）;
+    \item 如果 $p\in E$ 且 $p$ 不为极限点，则称 $p$ 为孤立点（isolated point）;
+    \item 如果 $E$ 的每个极限点都在 $E$ 中，则称 $E$ 为闭集（closed set）;
+    \item 如果存在 $p$ 邻域 $N$ 使得 $N$ 包含于 $E$，则称 $p$ 为 $E$ 的内点（interior point）;
+    \item 如果 $E$ 的每个内点都在 $E$ 中，则称 $E$ 为开集（open set）;
+    \item $E$ 的补集（complement）$E^c$ 为集合 $X$ 中所有不属于 $E$ 的点所组成的集合;
+    \item 如果集合 $E$ 为闭集，且 $E$ 中每个点均为 $E$ 的极限点，则称 $E$ perfect.
+    \item 如果存在一个实数 $M$ 以及一个点 $p\in E$ 使得 $d(p,q)<M$ 对任意 $q\in E$，则称 $E$ 有界（bounded）;
+    \item 如果 $X$ 中的每一个点都是 $E$ 中的点或者 $E$ 的极限点，则称 $E$ 在 $X$ 中稠密;
 \end{enumerate}
+
+以上大部分定义在实数集及其上最常见的度量，都是我们已经熟悉的，现在只是把这些概念推广到了一般的度量空间中。
+在后续的拓扑学的学习中，我们还可以将其推广到一般的拓扑空间中。限于篇幅，此处不再赘叙。
+
+下面介绍一些最基本的性质。
+
+\textbf{定理2.2.}每个邻域均为开集。
+
+\textbf{定理2.3.}如果 $p$ 是 $E$ 的极限点，则 $p$ 的任一邻域包含无穷个 $E$ 中的点。
+
+\textbf{推论2.4.}有限点集没有极限点。
+
+\textbf{定理2.5.}集合 $E$ 是开的当且仅当它的补集是闭的。
+
+\textbf{推论2.6.}集合 $F$ 是闭的当且仅当它的补集是开的。
+
+\textbf{定理2.7.}开集的任意并仍为开集，开集的有限交仍为开集。
+
+这一条常常被作为定义一般拓扑空间的重要部分，也说明此时其作为性质的重要性。
+
+\textbf{定义2.8.}$X$ 为一个度量空间，如果 $E\subset X$，$E'$ 表示所有在 $X$ 中的 $E$ 的极限点，
+则我们称 $\overline{E} = E\cup E'$ 为 $E$ 的闭包（clousure）.
+
+\textbf{定理2.9.}如果 $X$ 是一个度量空间，$E\subset X$，则
+\begin{enumerate}[label={\textbullet}]
+    \item $\overline{E}$ 为闭集；
+    \item $E = \overline{E}$ 当且仅当 $E$ 是闭集；
+    \item 对 $X$ 中任意包含 $E$ 的闭集 $F$，有 $\overline{E} \subset F$；
+\end{enumerate}
+
 \section*{参考文献} % 无编号的参考文献部分
 \bibliographystyle{plain} % 参考文献样式
 \bibliography{references}  % 指向参考文献文件(references.bib)
