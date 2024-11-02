@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 \usepackage{fontspec}  % 字体选择
 \usepackage{xeCJK}     % 中文支持
 \usepackage{hyperref}  % 超链接支持
@@ -78,10 +78,10 @@ $$d_1(x,y) = \frac{d(x,y)}{1+d(x,y)}$$
     $ $
 前两个条件显然成立,来看第三个条件：
 \[\begin{aligned}
-    d_1(x,z)\leq d(x, y)+d(y,z) 
-& \Longleftrightarrow  \frac{d (x,z)}{1+d(x,z) }\leq \frac{d(x,y) }{1+d(x,y)}+\frac{d(y,z)}{1+d(y,z)} \\
-& \Longleftrightarrow   1+\frac{1}{1+d(x,z)}\geq \frac{1}{1+d(x,y)}+\frac{1}{1+d (y,z)} \\
-& \Longleftarrow 1+\frac{1}{1+d(x,z)}\geq \frac{2+d(x,y)+d (y,z) }{1+d(x, y)+d(y,z)}
+    d_1(x,z)&\leq d(x, y)+d(y,z) \\
+  \Longleftrightarrow  \frac{d (x,z)}{1+d(x,z) }&\leq \frac{d(x,y) }{1+d(x,y)}+\frac{d(y,z)}{1+d(y,z)} \\
+  \Longleftrightarrow   1+\frac{1}{1+d(x,z)}&\geq \frac{1}{1+d(x,y)}+\frac{1}{1+d (y,z)} \\
+  \Longleftarrow 1+\frac{1}{1+d(x,z)}&\geq \frac{2+d(x,y)+d (y,z) }{1+d(x, y)+d(y,z)}
 \end{aligned}\]
 最后的不等式显然成立.故 $d_1$ 是 $E$ 上的度量.\\
 \end{proof}
