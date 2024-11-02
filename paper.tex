@@ -2,14 +2,18 @@
 \usepackage{fontspec}  % 字体选择
 \usepackage{xeCJK}     % 中文支持
 \usepackage{hyperref}  % 超链接支持
-\usepackage{cite}      % 参考文献=
-\usepackage{amsthm}%提供proof环境
-\usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{siunitx}
 \usepackage{enumitem}%修改列表格式
+\usepackage{setspace}%修改行间距
+%\usepackage{cite}
+\usepackage{natbib}%引用.bib
+\usepackage{amssymb,amsmath,amsthm}% 数学字体
+\usepackage{newpxtext,mathpazo}% 采用 Palatino 风格字体  
+\onehalfspacing
+
+\renewcommand{\proofname}{证明}% 修改proof环境的标题为“证明”
 
 \title{度量空间}
 \author{ZetaWang}
@@ -20,29 +24,30 @@
 \maketitle
 
 \begin{abstract}
-本文旨在通过介绍度量空间及其拓扑性质，为将来拓扑学的学习进行铺垫。
+本文旨在通过介绍度量空间及其拓扑性质,为将来拓扑学的学习进行铺垫.
 \end{abstract}
 
 \tableofcontents % 生成目录
+\newpage
 
 \section{度量空间的介绍}
-\textbf{定义1.1.}给定一个集合 $X$,把他的元素称为点(point),如果存在一个映射 $d:X\times X\rightarrow \mathbb{R}$，对任意 $x,y,z\in X$，满足：
+\textbf{定义1.1.}给定一个集合 $X$,把他的元素称为点(point),如果存在一个映射 $d:X\times X\rightarrow \mathbb{R}$,对任意 $x,y,z\in X$,满足：
 \begin{enumerate}[label={\textbullet}]
-    \item $d(x,y)\geq 0$，且 $d(x,y) = 0$ 当且仅当 $x=y$;
+    \item $d(x,y)\geq 0$,且 $d(x,y) = 0$ 当且仅当 $x=y$;
     \item $d(x,y) = d(y,x)$;
-    \item $d(x,y) + d(y,z) \geq d(x,z)$。
+    \item $d(x,y) + d(y,z) \geq d(x,z)$.
 \end{enumerate}
 则称 $X$ 为度量空间(metric space),$d$ 为距离(distance) .\setlength{\parskip}{1em} % 在段落之间增加额外的垂直间距
 
-以下为一些度量空间的例子\setlength{\parskip}{1em} % 在段落之间增加额外的垂直间距
+以下为一些度量空间的例子.\setlength{\parskip}{1em} % 在段落之间增加额外的垂直间距
 
-\textbf{例1.2.}验证欧氏空间及其度量构成一个度量空间。
+\textbf{例1.2.}验证欧氏空间及其度量构成一个度量空间.
 \begin{proof}
     \leavevmode
     \begin{enumerate}[label={\textbullet}]
-        \item $d(x,y) = (\sum\limits_{k=1}^{n}( x_k-y_k)^2)^{\frac{1}{2}} \geq 0$，且 $d(x,y) = 0$ 当且仅当 $x=y$;
+        \item $d(x,y) = (\sum\limits_{k=1}^{n}( x_k-y_k)^2)^{\frac{1}{2}} \geq 0$,且 $d(x,y) = 0$ 当且仅当 $x=y$;
         \item $d(x,y) = d(y,x)$;
-        \item 由 Minkowski 不等式，
+        \item 由 Minkowski 不等式,
         \begin{align*}
             % d(x,y) + d(y,z)
             & = (\sum_{k=1}^{n}( x_k-y_k)^2)^\frac{1}{2} + (\sum_{k=1}^{n}( y_k-z_k)^2)^{\frac{1}{2}} \\
@@ -50,69 +55,69 @@
             & = d(x,z)
         \end{align*}
     \end{enumerate}
-    因此，欧氏空间及其度量构成一个度量空间。
+    因此,欧氏空间及其度量构成一个度量空间.\\
 \end{proof}
 
-\textbf{例1.3.}设 $E$ 是一个非空集合，对任意的 $x,y\in E$，定义
+\textbf{例1.3.}设 $E$ 是一个非空集合,对任意的 $x,y\in E$,定义
 $$d(x,y) = \begin{cases} 0 & x=y \\ 1 & x\neq y \end{cases}$$
-证明 $d$ 是 $E$ 上的度量。拥有这种度量的集合 $E$ 称为离散度量空间(discrete metric space).
+证明 $d$ 是 $E$ 上的度量.拥有这种度量的集合 $E$ 称为离散度量空间(discrete metric space).
 \begin{proof}
     $ $
     \begin{enumerate}[label={\textbullet}]
-        \item $d(x,y) \geq 0$，且 $d(x,y) = 0$ 当且仅当 $x=y$;
+        \item $d(x,y) \geq 0$,且 $d(x,y) = 0$ 当且仅当 $x=y$;
         \item $d(x,y) = d(y,x)$;
-        \item $d(x,z)\leq d(x,y) + d(y,z)$ 在 $x=z$ 时显然成立；若 $x\neq z$，则 $x=y$ 和 $y=z$ 至少一个不成立，命题得证；
+        \item $d(x,z)\leq d(x,y) + d(y,z)$ 在 $x=z$ 时显然成立;若 $x\neq z$,则 $x=y$ 和 $y=z$ 至少一个不成立,命题得证;
     \end{enumerate}
-    因此，$d$ 是 $E$ 上的度量。
+    因此,$d$ 是 $E$ 上的度量.\\
 \end{proof}
 
-\textbf{例1.4.}设 $E$ 是以 $d$ 为度量的度量空间，对任意 $x,y\in E$,定义
+\textbf{例1.4.}设 $E$ 是以 $d$ 为度量的度量空间,对任意 $x,y\in E$,定义
 $$d_1(x,y) = \frac{d(x,y)}{1+d(x,y)}$$
-证明 $d_1$ 也是 $E$ 上的一个度量。
+证明 $d_1$ 也是 $E$ 上的一个度量.
 \begin{proof}
     $ $
-前两个条件显然成立，来看第三个条件：
+前两个条件显然成立,来看第三个条件：
 \[\begin{aligned}
     d_1(x,z)\leq d(x, y)+d(y,z) 
 & \Longleftrightarrow  \frac{d (x,z)}{1+d(x,z) }\leq \frac{d(x,y) }{1+d(x,y)}+\frac{d(y,z)}{1+d(y,z)} \\
 & \Longleftrightarrow   1+\frac{1}{1+d(x,z)}\geq \frac{1}{1+d(x,y)}+\frac{1}{1+d (y,z)} \\
 & \Longleftarrow 1+\frac{1}{1+d(x,z)}\geq \frac{2+d(x,y)+d (y,z) }{1+d(x, y)+d(y,z)}
 \end{aligned}\]
-最后的不等式显然成立。故 $d_1$ 是 $E$ 上的度量。
+最后的不等式显然成立.故 $d_1$ 是 $E$ 上的度量.\\
 \end{proof}
-由此可知，当已知度量空间上的一个度量时，可以构造新的度量。
+由此可知,当已知度量空间上的一个度量时,可以构造新的度量.
 
-\textbf{例1.5.}设 $E$ 是定义在有界闭区间 $[a,b]$ 上的全体有界函数所成之集，对任意 $f,g\in E$,定义
+\textbf{例1.5.}设 $E$ 是定义在有界闭区间 $[a,b]$ 上的全体有界函数所成之集,对任意 $f,g\in E$,定义
 $$d(f,g) = \sup_{x\in [a,b]}|f(x)-g(x)|$$
-证明 $d$ 是 $E$ 上的度量。
+证明 $d$ 是 $E$ 上的度量.
 \begin{proof}
-    前两个条件显然成立，来看第三个条件：由于
+    前两个条件显然成立,来看第三个条件：由于
     $$\vert f(x) - h(x)\vert \leq \vert f(x) - g(x)\vert + \vert g(x) - h(x)\vert$$
-    对任意 $x\in [a,b]$ 成立，对右边取上确界，得到
+    对任意 $x\in [a,b]$ 成立,对右边取上确界,得到
     $$\vert f(x) - h(x)\vert \leq \sup_{x\in [a,b]}|f(x)-g(x)| + \sup_{x\in [a,b]}|g(x)-h(x)|$$
-    再对左边取上确界，得到
+    再对左边取上确界,得到
     $$\sup_{x\in [a,b]}|f(x)-h(x)| \leq \sup_{x\in [a,b]}|f(x)-g(x)| + \sup_{x\in [a,b]}|g(x)-h(x)|$$
-    因此，$d$ 是 $E$ 上的度量。
+    因此,$d$ 是 $E$ 上的度量.\\
 \end{proof}
 
-\textbf{例1.6.}设 $p$ 是一个素数，
+\textbf{例1.6.}设 $p$ 是一个素数,
 对任一非零整数 $a$,
 定义 $v_p(a)$ 为使得 $p^k$ 整除 $a$ 的最大的 $k$,
 即 $v_p(a) = \max\{k\in\mathbb{N}: p^k\mid a\}$.
-进一步，对非零有理数 $x = \frac{a}{b}$（$a$ 和 $b$ 均为整数）,
-定义 $v_p(x) = v_p(a) - v_p(b)$.现对 $x\in\mathbb{Q}$，定义
+进一步,对非零有理数 $x = \frac{a}{b}$（$a$ 和 $b$ 均为整数）,
+定义 $v_p(x) = v_p(a) - v_p(b)$.现对 $x\in\mathbb{Q}$,定义
 $$\vert x\vert_p = \begin{cases} p^{-v_p(x)} & x\neq 0 \\ 0 & x=0 \end{cases}$$
-证明 $d(x,y) = \vert x-y\vert_p$ 是 $\mathbb{Q}$ 上的度量。
+证明 $d(x,y) = \vert x-y\vert_p$ 是 $\mathbb{Q}$ 上的度量.
 
 \begin{proof}
     $ $
-    前两个条件显然成立，来看第三个条件：
+    前两个条件显然成立,来看第三个条件：
     \begin{align*}
         d(x,z) &\leq d(x,y) + d(y,z) \\
         \iff \vert x-z\vert_p &\leq \vert x-y\vert_p + \vert y-z\vert_p \\
     \end{align*}
-    如果 $x= z$，显然；
-    如果 $x\neq z$，则不妨 $y\neq z$ 且 $x\neq y$，
+    如果 $x= z$,显然;
+    如果 $x\neq z$,则不妨 $y\neq z$ 且 $x\neq y$,
     \begin{align*}
         \vert x-z\vert_p &\leq \vert x-y\vert_p + \vert y-z\vert_p \\
         \Longleftarrow p^{-v_p(x-z)} &\leq p^{-v_p(x-y)} + p^{-v_p(y-z)} \\
@@ -123,64 +128,158 @@ $$\vert x\vert_p = \begin{cases} p^{-v_p(x)} & x\neq 0 \\ 0 & x=0 \end{cases}$$
     \[-v_p(x-z)\leq \max\{-v_p(x-y),-v_p(y-z)\}\]
     即
     \[p^{-v_p(x-z)}\leq p^{-v_p(x-y)} \leq p^{-v_p(x-y)} + p^{-v_p(y-z)}\]
-    故 $d(x,y) = \vert x-y\vert_p$ 是 $\mathbb{Q}$ 上的度量。
+    故 $d(x,y) = \vert x-y\vert_p$ 是 $\mathbb{Q}$ 上的度量.\\
 \end{proof}
 
-\textbf{定义1.7.}集合 $E$ 上的度量 $d$ 是 non-Archimedean ，是指对任意 $x,y,z\in E$，有
+\textbf{定义1.7.}集合 $E$ 上的度量 $d$ 是非阿基米德的,是指对任意 $x,y,z\in E$,有
 $$d(x,z) \leq max\{d(x,y),d(y,z)\}$$
-否则，称 $d$ 为 Archimedean .
+否则,称 $d$ 为阿基米德的.
 
-容易验证，例1.2、例1.5中的度量都 Archimedean ，
-而例1.6中的度量 non-Archimedean .
+容易验证,例1.2、例1.5中的度量都是阿基米德的.
+而例1.6中的度量是非阿基米德的.
 
-\textbf{例1.8.}设 $E$ 是一个具有 non-Archimedean 度量的度量空间。对任意 $a\in E$ 及 $r>0$,
-称 $B(a,r) = \{x\in E: d(x,a)<r\}$ 为以 $a$ 为圆心，$r$ 为半径的圆。证明：圆内每个点均为该圆的圆心。
+\textbf{例1.8.}设 $E$ 是一个具有非阿基米德度量的度量空间.对任意 $a\in E$ 及 $r>0$,
+称 $B(a,r) = \{x\in E: d(x,a)<r\}$ 为以 $a$ 为圆心,$r$ 为半径的圆.证明：圆内每个点均为该圆的圆心.
+\begin{proof}
+    $ $
+    任意取定 $b\in B(a,r)$,下面证明 $B(a,r) = B(b,r)$.\\
+    一方面,对于任意 $x\in B(a,r)$,有 $d(x,a)<r$.
+    由于
+    \[d(x,b)\leq max\{d(x,a),d(a,b)\}\]
+    且 $d(a,b)<r$,则 $d(x,b) < r$,即 $x\in B(b,r)$.\\
+    另一方面,由于对任意 $x\in B(b,r)$,有
+    \[d(x,a) \leq max\{d(x,b),d(a,b)\}\]
+    故 $d(x,a) < r$,从而 $x\in B(a,r)$.
+    综上,$B(a,r) = B(b,r)$.即圆内每个点均为该圆的圆心.\\
+\end{proof}
 
 \section{度量空间的拓扑结构}
-\textbf{定义2.1.}设 $X$ 为度量空间。下面所提及的点或者集合都视为 $X$ 中的点或者 $X$ 的子集。
+\textbf{定义2.1.}设 $X$ 为度量空间.下面所提及的点或者集合都视为 $X$ 中的点或者 $X$ 的子集.
 \begin{enumerate}[label={\textbullet}]
-    \item 对 $p\in X$,称 $N_r(p) = \{q\in X: d(p,q)\leq r\}$ 为 $p$ 的邻域（neighbourhood），$r$ 为半径（radius）;
-    \item 如果点 $p$ 的任意邻域都包含 $E$ 中的点 $q$，则称 $p$ 为 $E$ 的一个极限点（limit point）;
-    \item 如果 $p\in E$ 且 $p$ 不为极限点，则称 $p$ 为孤立点（isolated point）;
-    \item 如果 $E$ 的每个极限点都在 $E$ 中，则称 $E$ 为闭集（closed set）;
-    \item 如果存在 $p$ 邻域 $N$ 使得 $N$ 包含于 $E$，则称 $p$ 为 $E$ 的内点（interior point）;
-    \item 如果 $E$ 的每个内点都在 $E$ 中，则称 $E$ 为开集（open set）;
+    \item 对 $p\in X$,称 $N_r(p) = \{q\in X: d(p,q)\leq r\}$ 为 $p$ 的邻域（neighbourhood）,$r$ 为半径（radius）;
+    \item 如果点 $p$ 的任意邻域都包含 $E$ 中的点 $q$,则称 $p$ 为 $E$ 的一个极限点（limit point）;
+    \item 如果 $p\in E$ 且 $p$ 不为极限点,则称 $p$ 为孤立点（isolated point）;
+    \item 如果 $E$ 的每个极限点都在 $E$ 中,则称 $E$ 为闭集（closed set）;
+    \item 如果存在 $p$ 邻域 $N$ 使得 $N$ 包含于 $E$,则称 $p$ 为 $E$ 的内点（interior point）;
+    \item 如果 $E$ 的每个内点都在 $E$ 中,则称 $E$ 为开集（open set）;
     \item $E$ 的补集（complement）$E^c$ 为集合 $X$ 中所有不属于 $E$ 的点所组成的集合;
-    \item 如果集合 $E$ 为闭集，且 $E$ 中每个点均为 $E$ 的极限点，则称 $E$ perfect.
-    \item 如果存在一个实数 $M$ 以及一个点 $p\in E$ 使得 $d(p,q)<M$ 对任意 $q\in E$，则称 $E$ 有界（bounded）;
-    \item 如果 $X$ 中的每一个点都是 $E$ 中的点或者 $E$ 的极限点，则称 $E$ 在 $X$ 中稠密;
+    \item 如果集合 $E$ 为闭集,且 $E$ 中每个点均为 $E$ 的极限点,则称 $E$ perfect.
+    \item 如果存在一个实数 $M$ 以及一个点 $p\in E$ 使得 $d(p,q)<M$ 对任意 $q\in E$,则称 $E$ 有界（bounded）;
+    \item 如果 $X$ 中的每一个点都是 $E$ 中的点或者 $E$ 的极限点,则称 $E$ 在 $X$ 中稠密;
 \end{enumerate}
 
-以上大部分定义在实数集及其上最常见的度量，都是我们已经熟悉的，现在只是把这些概念推广到了一般的度量空间中。
-在后续的拓扑学的学习中，我们还可以将其推广到一般的拓扑空间中。限于篇幅，此处不再赘叙。
+以上大部分定义在 $\mathbb{R}^1$ 中的情况都是我们已经熟悉的,现在只是把这些概念推广到了一般的度量空间中.
+在后续的拓扑学的学习中,我们还可以将其推广到一般的拓扑空间中.限于篇幅,此处不再赘叙.
 
-下面介绍一些最基本的性质。
+下面介绍一些最基本的性质.
 
-\textbf{定理2.2.}每个邻域均为开集。
+\textbf{定理2.2.}每个邻域均为开集.
+\begin{proof}
+    $ $
+    考虑一个邻域 $N_r(p)$,对任意 $q\in N_r(p)$,有 $d(p,q)<r$,
+    故存在 $h_p>0$ 使得 $d(p,q) = r-h_p$.取 $N = N_{h_p}(q)$,则对任意 $s\in N$,有
+    $d(s,p)\leq d(s,q)+d(q,p) < h_p+ r-h_p$,故 $N\subset N_r(p)$.
+    因此,$N_r(p)$ 为开集.\\
+\end{proof}
+\textbf{定理2.3.}如果 $p$ 是 $E$ 的极限点,则 $p$ 的任一邻域包含无穷个 $E$ 中的点.
+\begin{proof}
+    如果存在 $p$ 的邻域 $N_r(p)$ 使得其中只含有有限个 $E$ 中的点,
+    设为 $q_1,q_2,\cdots,q_m$,
+    并记 $d(q_i,p) = r_i$.
+    设 $r_0 = \min_{1\leq i\leq m}\{r_i\}$,
+    则考虑邻域 $N_{\frac{r_0}{2}}(p)$,
+    显然这个邻域中不存在属于 $E$ 且不为 $p$ 的点.矛盾.\\
+\end{proof}
+\textbf{推论2.4.}有限点集没有极限点.
+\begin{proof}
+    $ $
+    对于有限点集 $E$,如果有极限点 $p$,
+    则 $p$ 有（事实上,任意）一个邻域包含 $E$ 中有限个点,
+    由 \textbf{定理2.3} 知矛盾.\\
+\end{proof}
 
-\textbf{定理2.3.}如果 $p$ 是 $E$ 的极限点，则 $p$ 的任一邻域包含无穷个 $E$ 中的点。
+\textbf{定理2.5.}集合 $E$ 是开的当且仅当它的补集是闭的.
+\begin{proof}
+    $ $
+    一方面,如果 $E^c$ 为闭集,则对任意 $x\in E$,有 $x \notin E^c$,
+    故 $x$ 不为 $E^c$ 的极限点,
+    从而存在 $x$ 的邻域 $N$ 使得 $N\cap E^c = \emptyset$,
+    故 $N\subset E$,即 $x$ 为 $E$ 的内点,
+    因此 $E$ 为开集.\\
+    另一方面,如果 $E$ 为开集,对于任意 $E^c$ 的任一极限点 $x$,
+    有 $N/\{x\} \cap E^c \neq \emptyset$,其中 $N$ 为 $x$ 的邻域,
+    即 $x$ 的任一邻域都不包含于 $E$,
+    从而 $x$ 不为 $E$ 的内点,又 $E$ 为开集,
+    这说明 $x\notin E$,故 $x\in E^c$,
+    从而 $E^c$ 为闭集.\\
+\end{proof}
+\textbf{推论2.6.}集合 $F$ 是闭的当且仅当它的补集是开的.
+\begin{proof}
+    $ $
+    由 \textbf{定理2.5} 可直接得到.\\
+\end{proof}
 
-\textbf{推论2.4.}有限点集没有极限点。
+\textbf{定理2.7.}开集的任意并仍为开集,开集的有限交仍为开集.
+\begin{proof}
+    $ $
+    给定度量空间 $X$ 及其度量 $d$,$U_\alpha(\alpha \in I)$ 为 $X$ 中的一族开集,
+    对任意 $x\in \bigcup\limits_{\alpha\in I}U_\alpha$,
+    存在 $\alpha_0\in I$,使得 $x\in U_{\alpha_0}$.
+    则存在 $x$ 的邻域 $N\subset U_{\alpha_0}$,
+    故 $N\subset \bigcup\limits_{\alpha\in I}U_\alpha$,
+    即 $\bigcup\limits_{\alpha\in I}U_\alpha$ 中任意一点为内点,
+    故 $\bigcup\limits_{\alpha\in I}U_\alpha$ 为开集.\\
+    另一方面,对开集 $U_i,1\leq i\leq m$,
+    对任意 $x\in \bigcap\limits_{i = 1}^m U_i$,
+    有 $x\in U_i$ 对 $1\leq i\leq m$ 成立,
+    故存在 $x$ 的邻域 $N_i$ 使得 $N_i\subset U_i$,
+    设 $N_i$ 的半径为 $r_i$,
+    则取 $r = \min_{1\leq i\leq m}\{r_i\}$,
+    对应的有 $x$ 的邻域 $N$,
+    从而 $N\subset N_i$,
+    进而 $N\subset \bigcap\limits_{i = 1}^m U_i$,
+    故 $\bigcap\limits_{i = 1}^m U_i$ 为开集.\\
+\end{proof}
 
-\textbf{定理2.5.}集合 $E$ 是开的当且仅当它的补集是闭的。
+这一条常常被作为定义一般拓扑空间的重要部分,也说明其重要性.
 
-\textbf{推论2.6.}集合 $F$ 是闭的当且仅当它的补集是开的。
-
-\textbf{定理2.7.}开集的任意并仍为开集，开集的有限交仍为开集。
-
-这一条常常被作为定义一般拓扑空间的重要部分，也说明此时其作为性质的重要性。
-
-\textbf{定义2.8.}$X$ 为一个度量空间，如果 $E\subset X$，$E'$ 表示所有在 $X$ 中的 $E$ 的极限点，
+\textbf{定义2.8.}$X$ 为一个度量空间,如果 $E\subset X$,$E'$ 表示所有在 $X$ 中的 $E$ 的极限点,
 则我们称 $\overline{E} = E\cup E'$ 为 $E$ 的闭包（clousure）.
 
-\textbf{定理2.9.}如果 $X$ 是一个度量空间，$E\subset X$，则
+\textbf{定理2.9.}如果 $X$ 是一个度量空间,$E\subset X$,则
 \begin{enumerate}[label={\textbullet}]
-    \item $\overline{E}$ 为闭集；
-    \item $E = \overline{E}$ 当且仅当 $E$ 是闭集；
-    \item 对 $X$ 中任意包含 $E$ 的闭集 $F$，有 $\overline{E} \subset F$；
+    \item $\overline{E}$ 为闭集;
+    \item $E = \overline{E}$ 当且仅当 $E$ 是闭集;
+    \item 对 $X$ 中任意包含 $E$ 的闭集 $F$,有 $\overline{E} \subset F$;
 \end{enumerate}
+\begin{proof}
+    $ $
+    \begin{enumerate}[label={\textbullet}]
+        \item 对于任意 $p\in \overline{E}^c$,
+        $p$ 有一个邻域 $N$ 使得 $N\cap E = \emptyset$,
+        若 $N$ 中含有 $E'$ 中有限个点,则可缩小邻域半径使得其为0个,
+        如果 $N$ 中含有 $E'$ 中无穷多个点,则 $N$ 中将含有 $E$ 中的点,矛盾.
+        因此,$N\cap \overline{E} = \emptyset$,
+        故 $\overline{E}^c$ 为开集,从而 $\overline{E}$ 为闭集.
+        \item 若 $E$ 为闭集,则 $E$ 的任意极限点都包含于 $E$,即
+        $E'\subset E$,从而 $\overline{E} = E$.\\
+        另一方面,如果 $E = \overline{E}$,则由于 $\overline{E}$ 为闭集,
+        则 $E$ 也为闭集.
+        \item 对 $X$ 中任意包含 $E$ 的闭集 $F$,
+        则对任意 $x\in E'$,$x$ 的任一邻域 $N$ 与 $E$ 的交集不为空集,
+        从而 $N$ 与 $F$ 的交集也不为空集,
+        故 $x\in F'=F$.从而 $\overline{E} \subset F$.
+    \end{enumerate}
+\end{proof}
 
+\renewcommand{\refname}{} % 去除英文的 "References" 标题
 \section*{参考文献} % 无编号的参考文献部分
+
+\vspace{-2em} % 根据需要调整这个值来减少间距
+
+% 引用部分
+\nocite{*} % 引用.bib文件中的所有条目
+
 \bibliographystyle{plain} % 参考文献样式
 \bibliography{references}  % 指向参考文献文件(references.bib)
 
