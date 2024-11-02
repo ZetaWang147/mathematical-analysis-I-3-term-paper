@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex paper"] 1730540404 "paper.aux" "paper.bbl" "paper" 1730540409 0
-  "./references.bib" 1730539000 283 54c3d6aa046ed61614081175362cef87 ""
+["bibtex paper"] 1730541811 "paper.aux" "paper.bbl" "paper" 1730541817 0
+  "./references.bib" 1730541810 317 db60a92840e82eab5bc44be09172bf1d ""
   "d:/texlive/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1697558155 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "paper.aux" 1730540407 928 265763f4466f1d78a1758a0dfbe94120 "xelatex"
+  "paper.aux" 1730541814 850 5d73850504a08df0ac82e7d3c76a41f7 "xelatex"
   (generated)
   "paper.bbl"
   "paper.blg"
   (rewritten before read)
-["xdvipdfmx"] 1730540408 "paper.xdv" "paper.pdf" "paper" 1730540409 0
-  "paper.xdv" 1730540407 63056 af32ab17d9c3ddd7e9a0f90a3043b3a0 "xelatex"
+["xdvipdfmx"] 1730541816 "paper.xdv" "paper.pdf" "paper" 1730541817 0
+  "paper.xdv" 1730541814 63144 f2a67af9454b8eefcb56eb6c3f066188 "xelatex"
   (generated)
   "paper.pdf"
   (rewritten before read)
-["xelatex"] 1730540405 "c:/Users/30278/Desktop/github/mathematical-analysis-I-3-term-paper/paper.tex" "paper.xdv" "paper" 1730540409 0
-  "c:/Users/30278/Desktop/github/mathematical-analysis-I-3-term-paper/paper.tex" 1730540399 13241 5f0ed6abe726a98a97555b74e60d4f60 ""
+["xelatex"] 1730541812 "c:/Users/30278/Desktop/github/mathematical-analysis-I-3-term-paper/paper.tex" "paper.xdv" "paper" 1730541817 0
+  "c:/Users/30278/Desktop/github/mathematical-analysis-I-3-term-paper/paper.tex" 1730541487 13241 a971f2318860ad522801fc6cb815c2fc ""
   "d:/texlive/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1697559797 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/texlive/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm" 1697563095 1804 7b5f73028f6509167f47ace9d69509ed ""
   "d:/texlive/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1697622216 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -62,6 +62,7 @@
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty" 1697561068 2894 3ac7bdb70dd9b75530be2ade2842c355 ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/base/ts1cmr.fd" 1697561068 2430 a2e8a746c2c6ddf1df1fb6ad609d5f6a ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/carlisle/scalefnt.sty" 1697558316 1360 df2086bf924b14b72d6121fe9502fcdb ""
+  "d:/texlive/texlive/2023/texmf-dist/tex/latex/cite/cite.sty" 1697558456 26218 19edeff8cdc2bcb704e8051dc55eb5a7 ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/cjk/texinput/CJKfntef.sty" 1697558463 12851 25a9b5cc006609feb5c9a20ce24a5392 ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/ctex/ctexhook.sty" 1697558868 6505 33157acfddefdd8fd513e2308e07a435 ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/enumitem/enumitem.sty" 1697559369 51697 f8f08183cd2080d9d18a41432d651dfb ""
@@ -93,7 +94,6 @@
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/letltxmacro/letltxmacro.sty" 1697561317 5766 13a9e8766c47f30327caf893ece86ac8 ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/lm/t1lmr.fd" 1697561454 1867 996fe743d88a01aca041ed22cc10e1bb ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/mweights/mweights.sty" 1697562483 4953 67f29a12ea26221103fce6bae3433e60 ""
-  "d:/texlive/texlive/2023/texmf-dist/tex/latex/natbib/natbib.sty" 1697562557 45456 1c8843383c0bd05870c45fa0ebea6cc2 ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/newpx/TeXGyrePagellaX.fontspec" 1697562639 325 36b69a5576b6c9060aaf3251b1e1fcdb ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/newpx/newpxtext.sty" 1697562639 23265 eca1c68123e58d828841132eb93170a0 ""
   "d:/texlive/texlive/2023/texmf-dist/tex/latex/psnfss/mathpazo.sty" 1697563826 8976 3f18c815295e2a2949e87fa743bcb489 ""
@@ -119,11 +119,11 @@
   "d:/texlive/texlive/2023/texmf-dist/web2c/texmf.cnf" 1697557583 41009 84b61f42d16d06bedb915f57aa2374cf ""
   "d:/texlive/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt" 1697622437 10822936 2f2d05df4fd97f104e054d07ed2d320f ""
   "d:/texlive/texlive/2023/texmf.cnf" 1697622263 713 e69b156964470283e0530f5060668171 ""
-  "paper.aux" 1730540407 928 265763f4466f1d78a1758a0dfbe94120 "xelatex"
-  "paper.bbl" 1730540405 275 ceb90555e18cf9c1f16b0a94df18b144 "bibtex paper"
-  "paper.out" 1730540407 214 2298609e1cde97caeb65b85d8cb5b22d "xelatex"
-  "paper.tex" 1730540399 13241 5f0ed6abe726a98a97555b74e60d4f60 ""
-  "paper.toc" 1730540407 160 a9c76ed9ca77da946300af1276724dfd "xelatex"
+  "paper.aux" 1730541814 850 5d73850504a08df0ac82e7d3c76a41f7 "xelatex"
+  "paper.bbl" 1730541812 305 534c773fe41846a1b6fda75852ba1225 "bibtex paper"
+  "paper.out" 1730541814 214 2298609e1cde97caeb65b85d8cb5b22d "xelatex"
+  "paper.tex" 1730541487 13241 a971f2318860ad522801fc6cb815c2fc ""
+  "paper.toc" 1730541814 160 a9c76ed9ca77da946300af1276724dfd "xelatex"
   (generated)
   "paper.aux"
   "paper.log"
