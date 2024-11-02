@@ -1,19 +1,19 @@
 # Fdb version 4
-["bibtex paper"] 0 "paper.aux" "paper.bbl" "paper" 1730384552 -1
+["bibtex paper"] 0 "paper.aux" "paper.bbl" "paper" 1730527117 -1
   "d:/texlive/texlive/2023/texmf-dist/bibtex/bst/base/plain.bst" 1697558155 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "paper.aux" 1730384549 800 a6310df005d82d579243b2192e439105 "xelatex"
+  "paper.aux" 1730527115 800 a6310df005d82d579243b2192e439105 "xelatex"
   "references.bib" 0 -1 0 ""
   (generated)
   "paper.bbl"
   "paper.blg"
   (rewritten before read)
-["xdvipdfmx"] 1730384551 "paper.xdv" "paper.pdf" "paper" 1730384552 0
-  "paper.xdv" 1730384549 39840 cfc35d50d0377e9a7ad7abe9ee312834 "xelatex"
+["xdvipdfmx"] 1730527116 "paper.xdv" "paper.pdf" "paper" 1730527117 0
+  "paper.xdv" 1730527115 41964 eea5a788c71a6ee00b63a36e11a711fd "xelatex"
   (generated)
   "paper.pdf"
   (rewritten before read)
-["xelatex"] 1730384547 "c:/Users/30278/Desktop/github/mathematical-analysis-I-3-term-paper/paper.tex" "paper.xdv" "paper" 1730384552 0
-  "c:/Users/30278/Desktop/github/mathematical-analysis-I-3-term-paper/paper.tex" 1730384546 8189 be1411db0c1c94469e80d5d5cc8ecb4f ""
+["xelatex"] 1730527113 "c:/Users/30278/Desktop/github/mathematical-analysis-I-3-term-paper/paper.tex" "paper.xdv" "paper" 1730527117 0
+  "c:/Users/30278/Desktop/github/mathematical-analysis-I-3-term-paper/paper.tex" 1730527112 8992 eaa6269620203bfd3a7c6ae877a1d37d ""
   "d:/texlive/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1697559797 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/texlive/texlive/2023/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1697622216 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
   "d:/texlive/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1697557708 1004 54797486969f23fa377b128694d548df ""
@@ -109,11 +109,11 @@
   "d:/texlive/texlive/2023/texmf-dist/web2c/texmf.cnf" 1697557583 41009 84b61f42d16d06bedb915f57aa2374cf ""
   "d:/texlive/texlive/2023/texmf-var/web2c/xetex/xelatex.fmt" 1697622437 10822936 2f2d05df4fd97f104e054d07ed2d320f ""
   "d:/texlive/texlive/2023/texmf.cnf" 1697622263 713 e69b156964470283e0530f5060668171 ""
-  "paper.aux" 1730384549 800 a6310df005d82d579243b2192e439105 "xelatex"
+  "paper.aux" 1730527115 800 a6310df005d82d579243b2192e439105 "xelatex"
   "paper.bbl" 1730275909 0 d41d8cd98f00b204e9800998ecf8427e "bibtex paper"
-  "paper.out" 1730384549 214 2298609e1cde97caeb65b85d8cb5b22d "xelatex"
-  "paper.tex" 1730384546 8189 be1411db0c1c94469e80d5d5cc8ecb4f ""
-  "paper.toc" 1730384549 160 db647cb5b0911c682e619ca5edd989e5 "xelatex"
+  "paper.out" 1730527115 214 2298609e1cde97caeb65b85d8cb5b22d "xelatex"
+  "paper.tex" 1730527112 8992 eaa6269620203bfd3a7c6ae877a1d37d ""
+  "paper.toc" 1730527115 160 db647cb5b0911c682e619ca5edd989e5 "xelatex"
   (generated)
   "paper.aux"
   "paper.log"

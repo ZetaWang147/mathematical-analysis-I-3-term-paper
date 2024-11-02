@@ -104,6 +104,28 @@ $$d(f,g) = \sup_{x\in [a,b]}|f(x)-g(x)|$$
 $$\vert x\vert_p = \begin{cases} p^{-v_p(x)} & x\neq 0 \\ 0 & x=0 \end{cases}$$
 证明 $d(x,y) = \vert x-y\vert_p$ 是 $\mathbb{Q}$ 上的度量。
 
+\begin{proof}
+    $ $
+    前两个条件显然成立，来看第三个条件：
+    \begin{align*}
+        d(x,z) &\leq d(x,y) + d(y,z) \\
+        \iff \vert x-z\vert_p &\leq \vert x-y\vert_p + \vert y-z\vert_p \\
+    \end{align*}
+    如果 $x= z$，显然；
+    如果 $x\neq z$，则不妨 $y\neq z$ 且 $x\neq y$，
+    \begin{align*}
+        \vert x-z\vert_p &\leq \vert x-y\vert_p + \vert y-z\vert_p \\
+        \Longleftarrow p^{-v_p(x-z)} &\leq p^{-v_p(x-y)} + p^{-v_p(y-z)} \\
+    \end{align*}
+    由于
+    \[v_p(a+b)\geq \min\{v_p(a),v_p(b)\}\]
+    则
+    \[-v_p(x-z)\leq \max\{-v_p(x-y),-v_p(y-z)\}\]
+    即
+    \[p^{-v_p(x-z)}\leq p^{-v_p(x-y)} \leq p^{-v_p(x-y)} + p^{-v_p(y-z)}\]
+    故 $d(x,y) = \vert x-y\vert_p$ 是 $\mathbb{Q}$ 上的度量。
+\end{proof}
+
 \textbf{定义1.7.}集合 $E$ 上的度量 $d$ 是 non-Archimedean ，是指对任意 $x,y,z\in E$，有
 $$d(x,z) \leq max\{d(x,y),d(y,z)\}$$
 否则，称 $d$ 为 Archimedean .
